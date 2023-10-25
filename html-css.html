@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>О зайцах</title>
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+	<script type="text/javascript">
+		function nav() { alert("Браузер: "+navigator.appName+" \nВерсия: "+navigator.appVersion); }
+		function loc() { alert("User: " + navigator.userAgent +" \nЛокация: "+location.href); }
+		function sceen() { alert("Разрешение экрана: " + screen.width+"x"+screen.height + "\nГлубина цвета: "+ screen.colorDepth); 
+			var newWin = window.open("about:blank", "hello", "width=250,height=50");
+			newWin.document.write("Разрешение экрана: " + screen.width+"x"+screen.height + "\nГлубина цвета: "+ screen.colorDepth);
+		}
+		function wind() {
+			window.status="Мой документ";
+			window.open("mydoc.htm", "Мой документ");
+			window.close();
+			window.alert("Сообщение");
+			window.alert("Сообщение" + window.status);
+			window.confirm("Да?");
+		}
+		function init() {
+			document.getElementById("img1").style.zIndex = 3;
+			document.getElementById("img3").style.zIndex = 1;
+		}
+		function first() {
+			document.getElementById("img2").style.visibility = "hidden";
+		}
+		function second() {
+			document.getElementById("img2").style.visibility = "visible";
+		}
+		function third() {
+			var temp = document.getElementById("img1").style.zIndex;
+			document.getElementById("img1").style.zIndex = document.getElementById("img3").style.zIndex;
+			document.getElementById("img3").style.zIndex = temp;
+		}
+	</script>
+</head>
+<body>
+&nbsp;<div class="text">
+    <main>
+		<script type="text/javascript">
+			document.write(document.lastModified);
+		</script>
+		<h1><center>Lepus</h1>
+		<p><font onmouseover="this.style.color='red';this.style.fontFamily='Times';" onmouseout="this.style.color='black';this.style.fontFamily='Georgia';">Зайцы — это млекопитающие животные, которые обитают в различных частях мира. Они относятся к семейству зайцевых и имеют длинные уши, короткие лапы и пушистую шерсть. Зайцы являются очень быстрыми и ловкими животными, которые могут развивать скорость до 80 км/ч.</font></p>
+		<p onmouseover="this.style.textIndent='25mm';this.style.marginRight='30mm'" onmouseout="this.style.textIndent='6mm';this.style.marginRight='0px'">Они питаются травой, листьями, корой деревьев и другими растительными продуктами. Зайцы играют важную роль в экосистемах, так как они помогают распространять семена растений и контролировать численность насекомых.</p>
+		<br>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2"><h1>Виды</h1>	</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class = "bel">Заяц-беляк (лат. Lepus timidus) — млекопитающее рода зайцев отряда зайцеобразных. Обычное животное севера Евразии.</td>
+					<td class = "ch">Китайский заяц (лат. Lepus sinensis) — млекопитающее из рода зайцев отряда зайцеобразных</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<div class="imgs">
+					   <img src="1.jpg" id="img1" class="img1" />
+					   <img src="2.jpg" id="img2" class="img2" />
+					   <img src="3.jpg" id="img3" class="img3" />
+					</div>
+				</td>
+			<!-- </tr> -->
+			<!-- <tr> -->
+				<td>
+					<div class="imgbuttons">
+						<input class="temp" type="button" value="Первая" onClick="first()"><br>
+						<input class="temp" type="button" value="Вторая" onClick="second();"><br>
+						<input class="temp" type="button" value="Третья" onClick="third()">
+					</div>
+				</td>
+		</tr>
+		</table>
+		<script type="text/javascript">
+			init();
+		</script>
+
+		<div class="buttons">
+		<input class="test" type="button" value="Window" onClick="wind()">
+		<input class="test" type="button" value="Navigator" onClick="nav()">
+		<input class="test" type="button" value="Locator" onClick="loc()">
+		<input class="test" type="button" value="Screen" onClick="sceen()">
+		</div>
+    </main>
+  </div> 
+  <style>
+	td {color:#000; font-size:20px;}
+	td.bel:hover {color:#FFFFFF; background-color: #000000; font-weight:bold; border:1px solid #7799aa;}
+	td.ch:hover {color:#000000; background-color: #FF5220;font-weight:bold; border:1px solid #7799aa;}
+  </style>
+</body>
+</html>
